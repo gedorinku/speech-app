@@ -10,8 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.gedorinku.speechapp.MainActivity">
 
-    <TextView
+    <fragment
+        android:name="com.gedorinku.speechapp.SpeechFragment"
+        android:id="@+id/speech_fragment"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
