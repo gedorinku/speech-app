@@ -1,15 +1,18 @@
 package com.gedorinku.speechapp
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.gedorinku.speechapp.databinding.FragmentSpeechBinding
 
 
 class SpeechFragment : Fragment() {
+
+    private lateinit var binding: FragmentSpeechBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +21,18 @@ class SpeechFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_speech, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        binding = FragmentSpeechBinding.bind(view)
+        binding.fragment = this
+        binding.speechScript = SpeechScript()
+    }
+
+    fun onSpeechButtonClick(view: View): Unit {
+
     }
 
     companion object {
