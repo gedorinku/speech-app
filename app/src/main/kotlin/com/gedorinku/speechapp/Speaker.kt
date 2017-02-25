@@ -17,8 +17,8 @@ import retrofit2.Retrofit
  */
 class Speaker(private val applicationInfo: ApplicationInfo) {
 
-    fun startSpeaking(text: String) {
-        startConvertingToSpeech(text) { audioData ->
+    fun startSpeaking(script: SpeechScript) {
+        startConvertingToSpeech(script.getScript()) { audioData ->
             val audioTrack = AudioTrack(
                     AudioManager.STREAM_MUSIC, 22050, AudioFormat.CHANNEL_OUT_MONO,
                     AudioFormat.ENCODING_PCM_16BIT, audioData.size, AudioTrack.MODE_STREAM)

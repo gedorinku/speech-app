@@ -36,7 +36,7 @@ class SpeechFragment : Fragment() {
         val applicationInfo = activity.packageManager
                 .getApplicationInfo(activity.packageName, PackageManager.GET_META_DATA)
         val speaker = Speaker(applicationInfo)
-        speaker.startSpeaking(binding.speechScript.getScript())
+        speaker.startSpeaking(binding.speechScript)
     }
 
     companion object {
