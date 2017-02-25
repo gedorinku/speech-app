@@ -1,5 +1,6 @@
 package com.gedorinku.speechapp
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -32,7 +33,10 @@ class SpeechFragment : Fragment() {
     }
 
     fun onSpeechButtonClick(view: View): Unit {
-
+        val applicationInfo = activity.packageManager
+                .getApplicationInfo(activity.packageName, PackageManager.GET_META_DATA)
+        val speaker = Speaker(applicationInfo)
+        speaker.startSpeaking(binding.speechScript.getScript())
     }
 
     companion object {

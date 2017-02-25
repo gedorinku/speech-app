@@ -13,6 +13,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        all {
+            manifestPlaceholders = [api_key: System.getenv("DOCOMO_API_KEY")]
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -37,6 +40,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     kapt "com.android.databinding:compiler:$android_plugin_version"
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
 repositories {
     mavenCentral()

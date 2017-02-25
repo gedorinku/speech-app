@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/speech_edit_text"
             android:layout_centerHorizontal="true"
-            android:onClick="@{fragment.onSpeechButtonClick}"
+            android:onClick="@{fragment::onSpeechButtonClick}"
             android:text="@string/speech" />
 
     </RelativeLayout>
