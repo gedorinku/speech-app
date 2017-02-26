@@ -6,10 +6,6 @@
             name="speechScript"
             type="com.gedorinku.speechapp.SpeechScript" />
 
-        <variable
-            name="fragment"
-            type="com.gedorinku.speechapp.SpeechFragment" />
-
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -38,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/speech_edit_text"
             android:layout_centerHorizontal="true"
-            android:onClick="@{fragment::onSpeechButtonClick}"
+            android:onClick="@{speechScript::onSpeechButtonClick}"
             android:text="@string/speech" />
 
     </RelativeLayout>

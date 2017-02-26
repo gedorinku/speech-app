@@ -28,14 +28,9 @@ class SpeechFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         binding = FragmentSpeechBinding.bind(view)
-        binding.fragment = this
         val applicationInfo = activity.packageManager
                 .getApplicationInfo(activity.packageName, PackageManager.GET_META_DATA)
         binding.speechScript = SpeechScript(applicationInfo)
-    }
-
-    fun onSpeechButtonClick(view: View): Unit {
-        binding.speechScript.onSpeechButtonClick()
     }
 
     companion object {
