@@ -29,14 +29,13 @@ class SpeechFragment : Fragment() {
 
         binding = FragmentSpeechBinding.bind(view)
         binding.fragment = this
-        binding.speechScript = SpeechScript()
+        val applicationInfo = activity.packageManager
+                .getApplicationInfo(activity.packageName, PackageManager.GET_META_DATA)
+        binding.speechScript = SpeechScript(applicationInfo)
     }
 
     fun onSpeechButtonClick(view: View): Unit {
-        val applicationInfo = activity.packageManager
-                .getApplicationInfo(activity.packageName, PackageManager.GET_META_DATA)
-        val speaker = Speaker(applicationInfo)
-        speaker.startSpeaking(binding.speechScript)
+        binding.speechScript.onSpeechButtonClick()
     }
 
     companion object {
